@@ -141,6 +141,8 @@ class FacebookAuth(BaseOAuth2):
                                        'the app')
 
             response = payload.read()
+            import logging
+            logging.exception(response)
             parsed_response = json.loads(response)
 
             access_token = parsed_response['access_token']
